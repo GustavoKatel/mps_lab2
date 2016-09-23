@@ -25,10 +25,6 @@ public class BasicFilePersistence<Serializable> implements PersistenceInterface<
             throw new PersistenceException("Invalid filename");
         }
 
-        if(!(new File(filename)).exists()) {
-            throw new PersistenceException("File does not exist");
-        }
-
         try {
             out = new ObjectOutputStream(new FileOutputStream(filename));
         } catch (IOException e) {

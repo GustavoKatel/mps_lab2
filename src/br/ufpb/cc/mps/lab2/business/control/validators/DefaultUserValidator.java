@@ -31,8 +31,8 @@ public class DefaultUserValidator implements UserValidator {
             throw new PasswordSizeUnderLimitException();
         }
 
-        if(!user.getSenha().matches(".*[a-zA-Z].*") ||
-                user.getSenha().matches(".*\\d.*") // numbers
+        if(!user.getSenha().matches(".*[a-zA-Z]+.*") ||
+                !user.getSenha().matches(".*[\\d]+.*") // numbers
                 )
         {
             throw new InvalidPasswordFormatException();

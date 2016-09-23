@@ -1,9 +1,13 @@
 package br.ufpb.cc.mps.lab2.business.model;
 
+import java.io.Serializable;
+
 /**
  * Created by Gustavo Sampaio and Cicero Marcelo on 9/15/16.
  */
-public class User {
+public class User implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     private String login;
     private String senha;
@@ -32,5 +36,10 @@ public class User {
 
     public void setSenha(String senha) {
         this.senha = senha;
+    }
+
+    @Override
+    public String toString() {
+        return "Login: " + login + " Senha: " + senha;
     }
 }
